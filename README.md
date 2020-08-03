@@ -54,61 +54,83 @@ with arrays:
 
 ### Functions
 
-// let greet: Function; <-- with capital F
+let greet: Function; <-- with capital F
 
 optional parameter in a function:
-// const sum = (a: number, b: number, c?: number | string) => {
+```javascript
+const sum = (a: number, b: number, c?: number | string) => {
   console.log(a+b+c);
 }
+```
 
 default parameter (should be in the end):
-// const sum = (a: number, b: number, c: number = 10) => {
+```javascript
+const sum = (a: number, b: number, c: number = 10) => {
   console.log(a+b+c);
 }
+```
 
 specify a return type:
-// const sum = (a: number, b: number):number => {
+```javascript
+const sum = (a: number, b: number):number => {
   return a + b;
 }
-// if a function doesn't return a value
-// const sum = (a: number, b: number):void => {
+```
+
+if a function doesn't return a value:
+```javascript
+const sum = (a: number, b: number):void => {
   console.log(a+b);
 }
+```
 
 _**NOTE:**_
-// let myVar: string <-- declaring a type
-// let myVar = string <-- assigning a value;
+let myVar: string <-- declaring a type
+let myVar = string <-- assigning a value;
 
 ### Type Aliases
 
+```javascript
 type StringOrNum = string | number;
 type objWithName = { name: string, uid: StringOrNum };
+```
 
 instead of:
+```javascript
 const logDetails = (uid: string | number, item: string) {
   console.log(`${item} has a uid of ${uid}`);
 }
+
 const greet = (user: {name: string, uid: StringOrNum}) {
   console.log(`${user.name} says hello`);
 }
+```
 will be:
+```javascript
 const logDetails = (uid: StringOrNum, item: string) {
   console.log(`${item} has a uid of ${uid}`);
 }
+
 const greet = (user: objWithName) {
   console.log(`${user.name} says hello`);
 }
+```
 
 ## Function Signatures
 
 example 1
+```javascript
 let greet: (a: string, b: string) => void;
+
 greet = (name: string, greeting: string) => {
   console.log(`${name} says ${greeting}`);
 }
+```
 
 example 2
+```javascript
 let calc: (a: number, b: number, c: string) => number;
+
 calc = (numOne: number, numTwo: number, action: string) => {
   if (action === "add") {
     return numOne + numTwo;
@@ -116,13 +138,18 @@ calc = (numOne: number, numTwo: number, action: string) => {
     return numOne - numTwo;
   };
 };
+```
 
 example 3
+```javascript
 let logDetails: (obj: {name: string, age: number}) => void;
+
 type person: {name: string, age: number};
+
 logDetails = (ninja: person) => {
   console.log(`${ninja.name} is ${ninja.age} years old.`);
 }
+```
 
 ### The DOM & Type Casting
 
