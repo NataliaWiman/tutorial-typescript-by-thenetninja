@@ -2,82 +2,104 @@
 
 ## Tutorial #5 - Explicit types
 
-// let character: string;
-// let age: number;
-// let isLoggedIn: boolean;
+```js
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
+```
 
 ## Arrays
 
-creates a var that allows arrays of strings:
-// let array: string[];
-// array = ['hello', 'bye'] <- ok
-// array.push('hello') <- error
+_*creates a var that allows arrays of strings:*_
+```js
+let array: string[];
+array = ['hello', 'bye'] // <-- ok
+array.push('hello') //<- error
+```
 
-creates a var that allows arrays of strings that assigned an empty array as its value:
-// let array: string[] = [];
-// array = ['hello', 'bye'] <-- ok
-// array.push('hello') <-- ok
+_*creates a var that allows arrays of strings that assigned an empty array as its value:*_
+```js
+let array: string[] = [];
+array = ['hello', 'bye'] // <-- ok
+array.push('hello') // <-- ok
+```
 
 ## Union types
 
-with arrays"
-// let mixed: (string|number)[] = [];
-// mixed.push('hello); <-- ok
-// mixed.push('20'); <-- ok
-// mixed.push(true) <-- error
+_*with arrays:*_
+```js
+let mixed: (string|number)[] = [];
+mixed.push('hello'); // <-- ok
+mixed.push('20'); // <-- ok
+mixed.push(true); // <-- error
+```
 
-with vars:
-// let uid: string|number;
+_*with vars:*_
+```js
+let uid: string|number;
+```
 
-with objects:
-// let myObject: object;
-// myObject = {name: 'Martha', age: '25'}; <-- ok
-// myObject = 'hello'; <-- error
-// myObject = []; <-- ok!
+_*with objects:*_
+```js
+let myObject: object;
+myObject = {name: 'Martha', age: '25'}; // <-- ok
+myObject = 'hello'; // <-- error
+myObject = []; // <-- ok!
+```
 
-this variable only accepts objects that has these exact keys
-// let newObject: {
-//  name: string;
-//  age: number;
-// };
+_*this variable only accepts objects that has these exact keys:*_
+```js
+let newObject: {
+  name: string;
+  age: number;
+};
+```
 
 ## Tutorial #6 - Dynamic (any) types (like in JavaScript)
 
-// let age: any;
-// or
-// let age: any = 25; <-- declaring and assigning a value
+```js
+let age: any;
+```
+or
+```js
+let age: any = 25; // <-- declaring and assigning a value
+```
 
 with arrays:
-// let mixed: any[] = []; <-- declaring an empty array that takes in any type for array items
+```js
+let mixed: any[] = []; // <-- declaring an empty array that takes in any type for array items
+```
 
 ## Tutorial #7 - Better workflow and tsconfig
 
 ## Tutorial #8 - Functions
 
-let greet: Function; <-- with capital F
+```js
+let greet: Function; // <-- with capital F
+```
 
-optional parameter in a function:
+_*optional parameter in a function:*_
 ```javascript
 const sum = (a: number, b: number, c?: number | string) => {
   console.log(a+b+c);
 }
 ```
 
-default parameter (should be in the end):
+_*default parameter (should be in the end):*_
 ```javascript
 const sum = (a: number, b: number, c: number = 10) => {
   console.log(a+b+c);
 }
 ```
 
-specify a return type:
+_*specify a return type:*_
 ```javascript
 const sum = (a: number, b: number):number => {
   return a + b;
 }
 ```
 
-if a function doesn't return a value:
+_*if a function doesn't return a value:*_
 ```javascript
 const sum = (a: number, b: number):void => {
   console.log(a+b);
@@ -221,11 +243,11 @@ class Invoice {
 };
 ```
 
-*Public* access modifier is the default behaviour, it means that we can change and read the value inside the Class and outside of it.
+_**Public**_ access modifier is the default behaviour, it means that we can change and read the value inside the Class and outside of it.
 
-*Private* access modifier only allows us to read and change the value inside the Class.
+_**Private**_ access modifier only allows us to read and change the value inside the Class.
 
-*Readonly* access modifier means that we can read it inside and outside the Class itself but we can't change it.
+_**Readonly**_ access modifier means that we can read it inside and outside the Class itself but we can't change it.
 
 ## Tutorial #14 - Modules
 
