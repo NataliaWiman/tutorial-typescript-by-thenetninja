@@ -107,8 +107,10 @@ const sum = (a: number, b: number):void => {
 ```
 
 _**NOTE:**_
-let myVar: string <-- declaring a type
-let myVar = string <-- assigning a value;
+```js
+let myVar: string; // <-- declaring a type
+let myVar = string; // <-- assigning a value
+```
 
 ## Tutorial #9 - Type Aliases
 
